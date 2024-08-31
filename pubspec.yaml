@@ -1,0 +1,81 @@
+name: flutter_application_1
+description: "A new Flutter project."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.3 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  get: ^4.6.6
+  http: ^1.2.2
+  validators: ^3.0.0
+  localstorage: ^5.0.0
+  shared_preferences: ^2.1.0
+  image_picker: ^1.1.2
+  cupertino_icons: ^1.0.6
+  lottie: ^3.1.2
+  charts_flutter: ^0.12.0
+  provider: ^6.0.0
+  fl_chart: ^0.68.0
+  google_maps_flutter: ^2.9.0
+  dio: ^5.6.0
+  flutter_polyline_points: ^2.1.0
+  google_places_flutter: ^2.0.9
+  jwt_decoder: ^2.0.1
+  google_places_autocomplete_text_field: ^0.1.3
+  video_player: ^2.9.1
+  dropdown_search: ^5.0.6
+  open_street_map_search_and_pick: ^0.1.1
+  firebase_core: ^3.4.0
+  firebase_messaging: ^15.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - Assets/img.png
+    - Assets/background.png
+    - Assets/map.png
+    - Assets/upload.jpg
+    - Assets/upload2.png
+    - Assets/taxi.jpg
+    - Assets/driver.png
+    - Assets/map2.png
+    - Assets/road.png
+    - Assets/taxman.jpg
+    - Assets/driver2.jpg
+    - Assets/driver2.png
+    - Assets/driving.gif
+    - Assets/womantaxi.jpg
+    - Assets/taxis.png
+    - Assets/taxi_onphone.png
+    - Assets/City driver-pana.png
+    - Assets/city_driver.png
+    - Assets/taxi4.png
+    - Assets/Front car-rafiki.png
+    - Assets/Taxi-app.png
+    - Assets/taxi3.jpg
+    - Assets/newtaxi.gif
+    - Assets/sad.png
+    - Assets/no_car.jpg
+    - Assets/Front car-pana.png
+    - Assets/Profile pic-cuate.png
+    - Assets/bike_back.png
+    - Assets/bike2.png
+    - Assets/motoride.png
+    - Assets/book-taxi.mp4
+    - Assets/order-ride-removebg-preview.png
+    - Assets/E-Wallet-bro.png
+    - Assets/Wallet-pana.png
+    - Assets/empty_wallet.png
+    - Assets/Geo.png
+    - Assets/taxis_reserve.png
+  
