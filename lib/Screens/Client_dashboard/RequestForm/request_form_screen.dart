@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Components/TextField.dart';
 import 'package:flutter_application_1/Screens/Client_dashboard/RequestForm/request_form_ctrl.dart';
 import 'package:flutter_application_1/Service/google_palaces_api_service.dart';
 import 'package:get/get.dart';
@@ -83,6 +84,8 @@ class ReservationScreen extends StatelessWidget {
                                       ),
                                       prefixIcon:
                                           Icon(Icons.flag, color: Colors.pink),
+                                      contentPadding: EdgeInsets.symmetric(
+                                          vertical: 4.0, horizontal: 12.0),
                                     ),
 
                                     debounceTime: 300, // default 600 ms,
@@ -155,6 +158,8 @@ class ReservationScreen extends StatelessWidget {
                                       ),
                                       prefixIcon:
                                           Icon(Icons.flag, color: Colors.pink),
+                                      contentPadding: EdgeInsets.symmetric(
+                                          vertical: 4.0, horizontal: 12.0),
                                     ),
 
                                     debounceTime: 300, // default 600 ms,
@@ -206,25 +211,19 @@ class ReservationScreen extends StatelessWidget {
                                     // place type
                                     placeType: PlaceType.geocode,
                                   ),
-                                  TextField(
-                                    controller: controller.numberOfSeatsController,
+                                  SizedBox(height: 15),
+                                  appTextField(
+                                    controller:
+                                        controller.numberOfSeatsController,
                                     keyboardType: TextInputType.text,
-                                    decoration: InputDecoration(
+                            
+                                        
                                       labelText:
                                           'Number of seats by default is one(1)',
-                                      labelStyle:
-                                          TextStyle(color: Colors.black),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: Colors.black),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide:
-                                            BorderSide(color: Colors.pink),
-                                      ),
-                                      prefixIcon: Icon(Icons.chair_alt_outlined,
-                                          color: Colors.pink),
-                                    ),
+                                    
+                                      icon:Icons.chair_alt_outlined,
+                                      
+                                  
                                   ),
                                   //submit button
                                   SizedBox(height: 15),
@@ -236,7 +235,7 @@ class ReservationScreen extends StatelessWidget {
                                     style: ElevatedButton.styleFrom(
                                       backgroundColor: Colors.pink,
                                       padding: EdgeInsets.symmetric(
-                                          horizontal: 60.0, vertical: 16.0),
+                                          horizontal: 60.0, vertical: 10.0),
                                       shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(30.0),
@@ -430,9 +429,9 @@ class ReservationScreen extends StatelessWidget {
                                     ),
                                     child: Text(
                                       'Submit Request',
-                                        style: TextStyle(
-                                            fontSize: 18, color: Colors.  white),
-                                      ),
+                                      style: TextStyle(
+                                          fontSize: 18, color: Colors.white),
+                                    ),
                                   ),
                                 ],
                               ),

@@ -6,8 +6,8 @@ import 'package:flutter_application_1/Screens/Driver_dashboard/Statistics/statis
 import 'package:get/get.dart';
 
 class DriverDashboardPage extends StatelessWidget {
-   DriverDashboardPage({super.key});
-DriverProfileController userName = Get.put(DriverProfileController());
+  DriverDashboardPage({super.key});
+  DriverProfileController userName = Get.put(DriverProfileController());
 
   // Manage the state here
 
@@ -20,11 +20,12 @@ DriverProfileController userName = Get.put(DriverProfileController());
           backgroundColor: Colors.white,
           appBar: AppBar(
             backgroundColor: Colors.pink,
-            title: Text('Hello ${userName.name}!', style: TextStyle(color: Colors.white, fontSize: 17)),
+            title: Text('Hello ${userName.name}!',
+                style: TextStyle(color: Colors.white, fontSize: 17)),
             leading: IconButton(
               iconSize: 30,
               icon: CircleAvatar(
-                backgroundImage:NetworkImage(userName.profilePicture),
+                backgroundImage: NetworkImage(userName.profilePicture),
                 // Your profile image here
               ),
               onPressed: () {
@@ -35,15 +36,15 @@ DriverProfileController userName = Get.put(DriverProfileController());
               IconButton(
                 icon: Icon(Icons.edit, color: Colors.white),
                 onPressed: () {
-                 Get.toNamed(AppRoutes.driverprofile);
+                  Get.toNamed(AppRoutes.driverprofile);
                 },
               ),
               IconButton(
-              icon: Icon(Icons.logout, color: Colors.white),
-              onPressed: () {
-              showLogoutDialogue(context, controller);
-              },
-            ),
+                icon: Icon(Icons.logout, color: Colors.white),
+                onPressed: () {
+                  showLogoutDialogue(context, controller);
+                },
+              ), // Display DocumentCheck only if documents are unverified
             ],
           ),
           bottomNavigationBar: buildBottomNavigation(AppRoutes.driverStats),
@@ -52,27 +53,10 @@ DriverProfileController userName = Get.put(DriverProfileController());
               padding: const EdgeInsets.all(6.0),
               child: Column(
                 children: [
-                  // Transparent red box message
-                  Visibility(
-                    visible: !controller.isDocumentVerified,
-                    child: Container(
-                      padding: const EdgeInsets.all(16.0),
-                      margin: const EdgeInsets.only(bottom: 16.0),
-                      decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(0.3),
-                        borderRadius: BorderRadius.circular(8.0),
-                        border: Border.all(color: Colors.red, width: 1.0),
-                      ),
-                      child: Text(
-                        'You cannot access some functionalities until your documents are verified.',
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16.0,
-                        ),
-                      ),
-                    ),
-                  ),
+                  if (!controller.isDocumentVerified)
+                    DocumentCheck(
+                        isDocumentVerified: controller.isDocumentVerified),
+
                   Container(
                     padding: const EdgeInsets.all(8.0),
                     decoration: BoxDecoration(
@@ -94,8 +78,7 @@ DriverProfileController userName = Get.put(DriverProfileController());
                             Expanded(
                               child: DashboardCard(
                                 title: 'Number of Vehicles',
-                                
-                                value:"0",
+                                value: "0",
                                 icon: Icons.directions_car,
                               ),
                             ),
@@ -191,12 +174,9 @@ DriverProfileController userName = Get.put(DriverProfileController());
       ),
     );
   }
-
-  
 }
 
-
-class DocumentCheck extends StatelessWidget {
+class DocumentCheck extends StatelessWidget { 
   final bool isDocumentVerified;
 
   DocumentCheck({required this.isDocumentVerified}); // Receive parameter
@@ -219,7 +199,7 @@ class DocumentCheck extends StatelessWidget {
                   border: Border.all(color: Colors.red, width: 1.0),
                 ),
                 child: Text(
-                  'You cannot access some functionalities until your documents are verified.',
+                  'You will be deprived from certain functions untill your documents are verified',
                   style: TextStyle(
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
@@ -239,7 +219,7 @@ class DocumentCheck extends StatelessWidget {
 class DashboardCard extends StatelessWidget {
   final String title;
   final String value;
-  
+
   final IconData icon;
   final Color color; // Added color parameter
 

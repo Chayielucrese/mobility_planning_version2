@@ -111,8 +111,8 @@ class SignupController extends GetxController {
         formKey.currentState!.reset();
       } else {
         final errorResponse = json.decode(response.body);
-        Get.snackbar('Registration failed', errorResponse['msg'],
-            backgroundColor: Colors.pink, colorText: Colors.white);
+        alertError("${errorResponse['msg']}");
+      
       }
     } catch (e) {
       print("Error occurred during registration: $e");

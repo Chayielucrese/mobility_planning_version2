@@ -1,9 +1,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Components/document_upload.dart';
-import 'package:flutter_application_1/Routes/app_routes.dart';
-import 'package:get/get.dart';
-import 'package:image_picker/image_picker.dart';
+
+
 // Import the DocumentUploadGrid widget
 
 class MyPopupComponent extends StatefulWidget {

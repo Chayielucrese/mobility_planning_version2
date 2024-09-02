@@ -64,7 +64,7 @@ class _SubscribeNowPageState extends State<SubscribeNowPage> {
             SizedBox(height: 20),
 
             // Payment Method Selection
-            Text(
+            const Text(
               "Select Payment Method",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
